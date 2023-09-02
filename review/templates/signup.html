@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+    <!-- ICON -->
+    <link rel="icon" type="image/jpg" href="{% static 'icon.png' %}"/>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <!-- LINKED FILES  -->
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+
+    <title>Sign Up</title>
+ 
+</head>
+<body>
+
+  <div class="yt-head">
+    {% comment %} <img src="{% static 'youtube_icon.jpg' %}" class='yt-icon' /> YouThoob {% endcomment %}
+  </div>
+
+  <section class="signup">
+
+    <div class="s-head">Sign Up</div>
+    <form action="/signup/" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {% if error %}
+      <div class="alert alert-danger" role="alert">Please Enter the contact number</div>
+      {% endif %}
+      {% if error1 %}
+      <div class="alert alert-danger" role="alert">username already exist</div>
+      {% endif %}
+      {% if error3 %}
+      <div class="alert alert-danger" role="alert">email already exist</div>
+      {% endif %}
+      <div class="input">
+        <div class="i1">
+            <div class="i-head">Username</div>
+            <input type="text" name="username" class='i-box' id="username" required></input><br>
+        </div>
+
+        <div class="i2">
+            <div class="i-head">Email</div>
+            <input type="email" name="email" class="i-box" id="email" required></input><br>
+        </div>
+        
+        <div class="i3">
+            <div class="i-head">Password</div>
+            <input type="password" name="password" class='i-box' id="password" required></input><br>
+        </div>
+      </div>
+        <div class="i3">
+          <div class="i-head">please upload your profile picture</div>
+            <input type="file" name="file" class='i-box' id="file"></input><br>
+        </div>
+      </div>
+
+      <div>
+        <button type="submit" class="submit-btn register" value="Submit">Register</button>
+      </div>
+
+    </form>
+  </section>
+</body>
+</html>

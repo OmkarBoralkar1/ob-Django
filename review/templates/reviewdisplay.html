@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>ob cute</title>
+    <style>
+        table, th, td, tr {
+            border: 1px solid black;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1> reviews </h1>
+    <p>{{ p }}</p>
+    <p>{{ p1 }}</p>
+
+    {% for n in p2 %}
+    <h1>{{ forloop.counter }}&nbsp;{{ n }}</h1>
+    {% endfor %}
+    <form action="/review/?hotel_id={{ request.GET.hotel_id }}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type='number' placeholder='please enter the number'>
+        <input type="hidden" name="hotel_id" value="{{ request.GET.hotel_id }}">
+        <input type="submit" value="Submit"><br>
+    <div class="tt">
+        {% if review %}
+        <table cellpadding="10">
+            <tr>
+                <th>id</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Review</th>
+                <th>Reply</th>
+            </tr>
+            {% for entry in review %}
+            <tr>
+                <td>{{ entry.id }}</td>
+                <td>{{ entry.username }}</td>
+                <td>{{ entry.email }}</td>
+                <td>{{ entry.review_text }}</td>
+                <td><a href="/reply/?review_id={{ entry.id }}&hotel_id={{ request.GET.hotel_id }}">Reply</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No reviews available.</p>
+        {% endif %}
+    </div>
+</form>
+    {% if n1 %}
+    {% for j in n1 %}
+        {% if j > 20 %}
+        <p>{{ forloop.counter }}&nbsp;{{ j }}</p>
+        {% endif %}
+    {% endfor %}
+    {% else %}
+    <a href="/hotel1/?hotel_id={{ request.GET.hotel_id }}">Go back</a>
+    {% endif %}
+</body>
+</html>

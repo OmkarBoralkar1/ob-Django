@@ -1,0 +1,67 @@
+/* hotel.css */
+
+.form-label {
+    font-weight: bold;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .hotel-id {
+    margin-top: 16px;
+    font-weight: bold;
+  }
+  
+  .message {
+    margin-top: 16px;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+  }
+  
+  .hotel-image {
+    margin-top: 16px;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .hotel-video {
+    margin-top: 16px;
+    width: 500px;
+    height: 300px;
+  }
+  
+  .video-container {
+    margin-top: 16px;
+  }
+  
+  .review-label {
+    margin-top: 16px;
+    font-weight: bold;
+  }
+  
+  .review-link {
+    display: block;
+    margin-top: 16px;
+  }
+  
+  .go-back-link {
+    display: block;
+    margin-top: 16px;
+  }
+  

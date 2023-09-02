@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Reply</title>
+</head>
+<body>
+    <form action="/reply/?review_id={{ request.GET.review_id }}" method="post">
+        {% if error %}
+        <div>Please reply, no empty space</div>
+     {% endif %}
+        {% csrf_token %}
+        <p>Review ID: {{ request.GET.review_id }}</p> <!-- Access the review ID from the query parameter -->
+        <label for="reply_input">Please reply</label>
+        <input id="reply_input" type="text" name="reply"><br><br>
+        <input type="hidden" name="review_id" value="{{ request.GET.review_id }}"> <!-- Pass the review ID as a hidden input field -->
+        <button type="submit">Submit</button><br>
+    </form>
+    <a href="/review/?hotel_id={{ request.GET.hotel_id }}">Go back</a> <!-- Include the hotel_id query parameter in the link URL -->
+
+    {% for reply in replies %}
+        <h3>Review ID: {{ reply.review.id }}</h3>
+        <p>Username: {{ reply.username }}</p>
+        <p>Email: {{ reply.email }}</p>
+        <p>Reply: {{ reply.reply }}</p>
+        <hr>
+    {% empty %}
+        <p>No replies found.</p>
+    {% endfor %}
+</body>
+</html>

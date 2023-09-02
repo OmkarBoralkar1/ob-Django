@@ -1,0 +1,109 @@
+:root{
+    --light-black: #949494;
+    --red: #FF0000;
+}
+
+*{
+    padding:0%;
+    margin: 0%;
+    font-family:"initial";
+    box-sizing: border-box;
+    font-family: 'Cabin',sans-serif;
+}
+
+.o{
+    margin-left: 2vw;
+    margin-top: 2vh;
+    border-bottom: 1px solid black;
+    width: 35vw;
+}
+
+h1{
+    margin-top: 4vh;
+    font-size: 250%;
+}
+
+body{
+    background-image: url("../images/login-bg.jpg");
+    background-color: rgb(30, 30, 30);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/* yt heading */
+
+.yt-head{
+    display: flex;
+    align-items: center;
+    height: 3.5vw;
+    width: 20vw;
+    margin: 2.5vw;
+    color: white;
+    font-size: 2.7vw;
+}
+
+.yt-icon{
+    margin-right: 1vw;
+    height: 3.5vw;
+}
+
+
+/* create account box  */
+.signup{
+    margin: -12.5vh auto;
+    padding: 4vw;
+    height: 90vh;
+    width: 40vw;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.s-head{
+    margin-top: -1vh;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 4vw;
+}
+
+/* input box */
+
+.i-head{
+    font-size: 1.3vw;
+    color: var(--light-black);
+    margin-bottom: 0.5vw;
+}
+
+.input{
+    margin-top: 5vh;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.i-box{
+    height: 6vh;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--light-black);
+}
+
+/* submit buttons */
+
+.submit-btn{
+    margin-top: 4vw;
+    padding: 1vw;
+    width: 100%;
+    font-weight: 500;
+    font-size: 1.5vw;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.register{
+    color: white;
+    border: none;
+    background-color: var(--red);
+}
